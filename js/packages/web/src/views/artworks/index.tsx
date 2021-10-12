@@ -16,12 +16,14 @@ export enum ArtworkViewState {
   Metaplex = '0',
   Owned = '1',
   Created = '2',
+  GALLERY = '3',
 }
 
 export const ArtworksView = () => {
   const { connected, publicKey } = useWallet();
   const ownedMetadata = useUserArts();
   const createdMetadata = useCreatorArts(publicKey?.toBase58() || '');
+  const GALLERYMetadata = useCreatorArts(publicKey?.toBase58() || '');
   const { metadata, isLoading } = useMeta();
   const [activeKey, setActiveKey] = useState(ArtworkViewState.Metaplex);
   const breakpointColumnsObj = {
@@ -36,14 +38,17 @@ export const ArtworksView = () => {
       ? ownedMetadata.map(m => m.metadata)
       : activeKey === ArtworkViewState.Created
       ? createdMetadata
+      : metadata
+      ? GALLERYMetadata
       : metadata;
 
   useEffect(() => {
-    if (connected) {
-      setActiveKey(ArtworkViewState.Owned);
-    } else {
-      setActiveKey(ArtworkViewState.Metaplex);
-    }
+    setActiveKey(ArtworkViewState.GALLERY)
+    // if (connected) {
+    //   setActiveKey(ArtworkViewState.Owned);
+    // } else {
+    //   setActiveKey(ArtworkViewState.Metaplex);
+    // }
   }, [connected, setActiveKey]);
 
   const artworkGrid = (
@@ -98,6 +103,14 @@ export const ArtworksView = () => {
                 <TabPane
                   tab={<span className="tab-title">Created</span>}
                   key={ArtworkViewState.Created}
+                >
+                  {artworkGrid}
+                </TabPane>
+              )}
+              {connected && (
+                <TabPane
+                  tab={<span className="tab-title">A GALLERY</span>}
+                  key={ArtworkViewState.GALLERY}
                 >
                   {artworkGrid}
                 </TabPane>

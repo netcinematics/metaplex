@@ -1,3 +1,24 @@
+> INSTALL TIPS
+was not easy.. spazefalcon
+- install yarn from 
+- npm install yarn --global
+- must install spacific node 14.17.6~
+- cd into js and run yarn
+- yarn bootstrap
+- yarn start (will start server on localhost:3000) - cannot run in VSCode.
+    > wait until compile successfully then localhost:3000.
+    > it takes a minute... to start... and then 3 minutes to load 1 NFT...
+    > here is the path to work on http://localhost:3000/#/artworks
+    > successfully set A GALLERY to home view 1st try - no error!
+    > changes in 1 file: web/src/views/artworks/index
+- yarn build (creates prod build directory under js above)
+- yarn deploy (goes to github pages) run from web directory
+
+On localhost:3000, connected wallet (log in) and 
+- INIT STORE button (cost 50cents in sol.)
+- Not sure what it did! : )
+
+
 # Metaplex Developer Guide
 
 # Architecture
