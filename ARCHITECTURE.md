@@ -11,8 +11,13 @@ was not easy.. spazefalcon
     > here is the path to work on http://localhost:3000/#/artworks
     > successfully set A GALLERY to home view 1st try - no error!
     > changes in 1 file: web/src/views/artworks/index
+- yarn stop > ctrl + c (twice)
 - yarn build (creates prod build directory under js above)
 - yarn deploy (goes to github pages) run from web directory
+- in prod: https://netcinematics.github.io/metaplex#/artworks
+    > gotta sign in with wallet to see anything
+    > kinda a problem... for what I need.
+- need to link menu to and from: https://netcinematics.github.io/CRYPTOFOLIO/
 
 On localhost:3000, connected wallet (log in) and 
 - INIT STORE button (cost 50cents in sol.)

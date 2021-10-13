@@ -63,6 +63,11 @@ const DefaultActions = ({ vertical = false }: { vertical?: boolean }) => {
       <Link to={`/artists`}>
         <Button className="app-btn">Creators</Button>
       </Link>
+      {/* <Link to={{ pathname: "https://netcinematics.github.io/CRYPTOFOLIO/" }} target="_blank" >
+        <Button className="app-btn">WEBSITE</Button>
+      </Link> */}
+      <a target="_blank" href="https://netcinematics.github.io/CRYPTOFOLIO/">WEBSITE</a>
+
     </div>
   );
 };
@@ -95,6 +100,11 @@ const MetaplexMenu = () => {
               <Menu.Item>
                 <Link to={`/artists`}>
                   <Button className="app-btn">Creators</Button>
+                </Link>
+              </Menu.Item>
+              <Menu.Item>
+                <Link to={`https://netcinematics.github.io/CRYPTOFOLIO/`}>
+                  <Button className="app-btn">WEBSITE!</Button>
                 </Link>
               </Menu.Item>
             </Menu>
